@@ -74,7 +74,7 @@ sub ButtonRelease{
   print "ButtonRelease @_\n"  if $PDL::Graphics::TriD::verbose;
 }
 
-=head2 ButtonPressed
+=head2 ButtonPress
 
 =for ref
 
