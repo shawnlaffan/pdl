@@ -105,6 +105,9 @@ Basic/Core/pdlsections.c
 Basic/Core/pdlsimple.h
 Basic/Gen/PP/Dump.pm
 Basic/Gen/pptemplate.pod
+Basic/IndOps/IndOps.c
+Basic/IndOps/IndOps.pm
+Basic/IndOps/IndOps.xs
 Basic/Math/Math.c
 Basic/Math/Math.pm
 Basic/Math/Math.xs

@@ -49,6 +49,8 @@ Basic/Gen/PP/SymTab.pm
 Basic/Gen/PP/Var.pm
 Basic/Gen/PP/XS.pm
 Basic/Gen/pptemplate
+Basic/IndOps/indxxx.pd
+Basic/IndOps/Makefile.PL
 Basic/Lite.pm
 Basic/LiteF.pm
 Basic/Lvalue.pm
@@ -718,6 +720,7 @@ t/ica.t
 t/image2d.t
 t/imagend.t
 t/imagergb.t
+t/indops.t
 t/inline-comment-test.t
 t/inline-with.t
 t/inlinepdlpp.t
