@@ -62,7 +62,7 @@ jobs:
             ${{ github.actor }} tagged ${{ github.repository }} ${{ github.event.ref }}
   ci:
     runs-on: ${{ matrix.os }}
-    if: ${{ github.event_name == 'push' || github.event_name == 'pull_request' }}
+    if: ${{ github.event_name == 'push' || github.event_name == 'pull_request' || ( github.event_name == 'create' && github.event.ref_type == 'tag' ) }}
     needs: notify
     env:
       PGPLOT_DEV: /NULL
@@ -167,7 +167,7 @@ jobs:
 
   ci-ubuntu-containers:
     runs-on: ubuntu-latest
-    if: ${{ github.event_name == 'push' || github.event_name == 'pull_request' }}
+    if: ${{ github.event_name == 'push' || github.event_name == 'pull_request' || ( github.event_name == 'create' && github.event.ref_type == 'tag' ) }}
     needs: notify
     container: ${{ matrix.container }}
     strategy:
@@ -268,8 +268,8 @@ jobs:
   build-status:
     runs-on: ubuntu-latest
     continue-on-error: true
-    if: ${{ ( github.event_name == 'push' || github.event_name == 'pull_request' ) && ( success() || failure() ) && github.repository == 'PDLPorters/pdl' }}
-    needs: [ 'ci', 'ci-ubuntu-containers' ]
+    if: ${{ ( github.event_name == 'push' || github.event_name == 'pull_request' || ( github.event_name == 'create' && github.event.ref_type == 'tag' ) ) && ( success() || failure() ) && github.repository == 'PDLPorters/pdl' }}
+    needs: [ 'ci', 'ci-ubuntu-containers', 'cygwin' ]
     env:
       IRC_CHANNEL: '#pdl'
       IRC_SERVER: 'irc.perl.org'
