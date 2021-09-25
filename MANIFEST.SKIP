@@ -245,3 +245,4 @@ subdirs
 
 ^cover_db/
 \.gc(ov|no|da)$
+pp-\w*\.c$
